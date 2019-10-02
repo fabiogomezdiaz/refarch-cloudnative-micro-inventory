@@ -19,4 +19,6 @@ public interface InventoryRepo extends CrudRepository<Inventory, Long> {
 
 	// find all whose price is less than or equal to /inventory/price/{price}
 	List<Inventory> findByPriceLessThanEqual(int price);
+
+	public Inventory findById(long id);
 }
