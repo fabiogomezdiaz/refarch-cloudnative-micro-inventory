@@ -19,7 +19,7 @@ def tls = env.TLS ?: "" // Set to "--tls" for IBM Cloud Private
 // Pod Environment Variables
 def namespace = env.NAMESPACE ?: "default"
 def registry = env.REGISTRY ?: "docker.io"
-def imageName = env.IMAGE_NAME ?: "ibmcase/bluecompute-inventory"
+def imageName = env.IMAGE_NAME ?: "fabiogomezdiaz/bluecompute-inventory"
 def imageTag = env.IMAGE_TAG ?: "latest"
 def serviceLabels = env.SERVICE_LABELS ?: "app=inventory,tier=backend" //,version=v1"
 def microServiceName = env.MICROSERVICE_NAME ?: "inventory"
@@ -57,7 +57,7 @@ podTemplate(label: podLabel, cloud: cloud, serviceAccount: serviceAccount, envVa
         envVar(key: 'HELM_HOME', value: helmHome)
     ],
     containers: [
-        containerTemplate(name: 'kubernetes', image: 'ibmcase/jenkins-slave-utils:3.1.2', ttyEnabled: true, command: 'cat')
+        containerTemplate(name: 'kubernetes', image: 'fabiogomezdiaz/jenkins-slave-utils:3.1.2', ttyEnabled: true, command: 'cat')
   ]) {
 
     node(podLabel) {

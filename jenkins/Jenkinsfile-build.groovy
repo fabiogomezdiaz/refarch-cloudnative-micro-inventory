@@ -18,7 +18,7 @@ def serviceAccount = env.SERVICE_ACCOUNT ?: "jenkins"
 // Pod Environment Variables
 def namespace = env.NAMESPACE ?: "default"
 def registry = env.REGISTRY ?: "docker.io"
-def imageName = env.IMAGE_NAME ?: "ibmcase/bluecompute-inventory"
+def imageName = env.IMAGE_NAME ?: "fabiogomezdiaz/bluecompute-inventory"
 def serviceLabels = env.SERVICE_LABELS ?: "app=inventory,tier=backend" //,version=v1"
 def microServiceName = env.MICROSERVICE_NAME ?: "inventory"
 def servicePort = env.MICROSERVICE_PORT ?: "8080"
@@ -58,8 +58,8 @@ podTemplate(label: podLabel, cloud: cloud, serviceAccount: serviceAccount, envVa
         emptyDirVolume(mountPath: '/var/lib/docker', memory: false)
     ],
     containers: [
-        containerTemplate(name: 'jdk', image: 'ibmcase/openjdk-bash:alpine', ttyEnabled: true, command: 'cat'),
-        containerTemplate(name: 'docker', image: 'ibmcase/docker:18.09-dind', privileged: true)
+        containerTemplate(name: 'jdk', image: 'fabiogomezdiaz/openjdk-bash:alpine', ttyEnabled: true, command: 'cat'),
+        containerTemplate(name: 'docker', image: 'fabiogomezdiaz/docker:18.09-dind', privileged: true)
   ]) {
 
     node(podLabel) {
