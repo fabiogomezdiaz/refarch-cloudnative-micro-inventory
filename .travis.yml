@@ -80,7 +80,7 @@ jobs:
         - true
       before_script:
       # Install minikube and helm
-      - wget https://raw.githubusercontent.com/ibm-cloud-architecture/refarch-cloudnative-kubernetes/spring/scripts/install_minikube_and_helm.sh && chmod +x install_minikube_and_helm.sh && bash install_minikube_and_helm.sh && rm install_minikube_and_helm.sh
+      - wget https://raw.githubusercontent.com/fabiogomezdiaz/refarch-cloudnative-kubernetes/master/scripts/install_minikube_and_helm.sh && chmod +x install_minikube_and_helm.sh && bash install_minikube_and_helm.sh && rm install_minikube_and_helm.sh
       # Install MySQL
       - helm upgrade --install mysql --version 0.10.2 --set fullnameOverride=${RELEASE_NAME}-mysql,mysqlRootPassword=${MYSQL_ROOT_PASSWORD},mysqlUser=${MYSQL_USER},mysqlPassword=${MYSQL_PASSWORD},mysqlDatabase=${MYSQL_DATABASE},persistence.enabled=false stable/mysql
       # Wait for MySQL to start

@@ -3,7 +3,7 @@
 ## Introduction
 This chart will deploy a Spring Boot Application with a MySQL database onto a Kubernetes Cluster.
 
-![Application Architecture](https://raw.githubusercontent.com/ibm-cloud-architecture/refarch-cloudnative-micro-inventory/spring/static/inventory.png?raw=true)
+![Application Architecture](https://raw.githubusercontent.com/fabiogomezdiaz/refarch-cloudnative-micro-inventory/master/static/inventory.png?raw=true)
 
 Here is an overview of the chart's features:
 - Leverage [`Spring Boot`](https://projects.spring.io/spring-boot/) framework to build a Microservices application.
@@ -14,7 +14,7 @@ Here is an overview of the chart's features:
 
 ## Chart Source
 The source for the `Inventory` chart can be found at:
-* https://github.com/ibm-cloud-architecture/refarch-cloudnative-micro-inventory/tree/master/spring/inventory
+* https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-inventory/tree/master/master/inventory
 
 The source for the `MySQL` chart can be found at:
 * https://github.com/helm/charts/tree/master/stable/mysql
@@ -38,7 +38,7 @@ helm upgrade --install mysql \
   stable/mysql
 
 # Clone inventory repository:
-git clone -b spring --single-branch https://github.com/ibm-cloud-architecture/refarch-cloudnative-micro-inventory.git
+git clone https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-inventory.git
 
 # Go to Chart Directory
 cd refarch-cloudnative-micro-inventory/chart/inventory

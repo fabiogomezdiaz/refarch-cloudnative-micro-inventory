@@ -2,10 +2,10 @@
 
 ## Microservice Apps Integration with ElasticSearch and MySQL Database
 
-[![Build Status](https://travis-ci.org/ibm-cloud-architecture/refarch-cloudnative-micro-inventory.svg?branch=master)](https://travis-ci.org/ibm-cloud-architecture/refarch-cloudnative-micro-inventory)
+[![Build Status](https://travis-ci.org/fabiogomezdiaz/refarch-cloudnative-micro-inventory.svg?branch=master)](https://travis-ci.org/fabiogomezdiaz/refarch-cloudnative-micro-inventory)
 
 *This project is part of the 'IBM Cloud Native Reference Architecture' suite, available at
-https://github.com/ibm-cloud-architecture/refarch-cloudnative-kubernetes/tree/spring*
+https://github.com/fabiogomezdiaz/refarch-cloudnative-kubernetes/tree/master*
 
 ## Table of Contents
 * [Introduction](#introduction)
@@ -41,14 +41,14 @@ Here is an overview of the project's features:
     + `http://localhost:8080/micro/inventory`
 
 ## Pre-requisites:
-* Create a Kubernetes Cluster by following the steps [here](https://github.com/ibm-cloud-architecture/refarch-cloudnative-kubernetes#create-a-kubernetes-cluster).
+* Create a Kubernetes Cluster by following the steps [here](https://github.com/fabiogomezdiaz/refarch-cloudnative-kubernetes#create-a-kubernetes-cluster).
 * Install the following CLI's on your laptop/workstation:
     + [`docker`](https://docs.docker.com/install/)
     + [`kubectl`](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
     + [`helm`](https://docs.helm.sh/using_helm/#installing-helm)
 * Clone inventory repository:
 ```bash
-git clone -b spring --single-branch https://github.com/ibm-cloud-architecture/refarch-cloudnative-micro-inventory.git
+git clone https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-inventory.git
 cd refarch-cloudnative-micro-inventory
 ```
 
@@ -177,16 +177,16 @@ The Spring Boot applications can be deployed on WebSphere Liberty as well. In th
 If you would like to setup an automated Jenkins CI/CD Pipeline for this repository, we provided a sample [Jenkinsfile](Jenkinsfile), which uses the [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/) syntax of the [Jenkins Kubernetes Plugin](https://github.com/jenkinsci/kubernetes-plugin) to automatically create and run Jenkis Pipelines from your Kubernetes environment.
 
 To learn how to use this sample pipeline, follow the guide below and enter the corresponding values for your environment and for this repository:
-* https://github.com/ibm-cloud-architecture/refarch-cloudnative-devops-kubernetes
+* https://github.com/fabiogomezdiaz/refarch-cloudnative-devops-kubernetes
 
 ## Conclusion
 You have successfully deployed and tested the Inventory Microservice and a MySQL database both on a Kubernetes Cluster and in local Docker Containers.
 
-To see the Inventory app working in a more complex microservices use case, checkout our Microservice Reference Architecture Application [here](https://github.com/ibm-cloud-architecture/refarch-cloudnative-kubernetes/tree/spring).
+To see the Inventory app working in a more complex microservices use case, checkout our Microservice Reference Architecture Application [here](https://github.com/fabiogomezdiaz/refarch-cloudnative-kubernetes/tree/master).
 
 ## Contributing
 If you would like to contribute to this repository, please fork it, submit a PR, and assign as reviewers any of the GitHub users listed here:
-* https://github.com/ibm-cloud-architecture/refarch-cloudnative-micro-inventory/graphs/contributors
+* https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-inventory/graphs/contributors
 
 ### GOTCHAs
 1. We use [Travis CI](https://travis-ci.org/) for our CI/CD needs, so when you open a Pull Request you will trigger a build in Travis CI, which needs to pass before we consider merging the PR. We use Travis CI to test the following:
@@ -203,5 +203,5 @@ If you would like to contribute to this repository, please fork it, submit a PR,
     * https://github.com/helm/charts/tree/master/stable/mysql
 
 ### Contributing a New Chart Package to Microservices Reference Architecture Helm Repository
-To contribute a new chart version to the [Microservices Reference Architecture](https://github.com/ibm-cloud-architecture/refarch-cloudnative-kubernetes/tree/spring) helm repository, follow its guide here:
-* https://github.com/ibm-cloud-architecture/refarch-cloudnative-kubernetes/tree/spring#contributing-a-new-chart-to-the-helm-repositories
+To contribute a new chart version to the [Microservices Reference Architecture](https://github.com/fabiogomezdiaz/refarch-cloudnative-kubernetes/tree/master) helm repository, follow its guide here:
+* https://github.com/fabiogomezdiaz/refarch-cloudnative-kubernetes/tree/master#contributing-a-new-chart-to-the-helm-repositories
