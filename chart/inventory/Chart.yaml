@@ -1,4 +1,9 @@
-apiVersion: v1
-description: BlueCompute Inventory Microservice
+apiVersion: v2
 name: inventory
 version: 0.6.0
+description: BlueCompute Inventory Microservice
+home: https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-inventory
+maintainers:
+  - name: Fabio Gomez
+    email: fabio.gomez@ieee.org
+    url: https://github.com/fabiogomezdiaz
