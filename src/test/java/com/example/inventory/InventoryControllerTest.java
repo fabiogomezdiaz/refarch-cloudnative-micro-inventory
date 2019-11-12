@@ -2,7 +2,8 @@ package inventory;
 
 import java.util.Random;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +11,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import inventory.models.Inventory;
 
 public class InventoryControllerTest {
-
 
 	@Test
 	public void testMarshalToJson() throws Exception {
@@ -22,8 +22,6 @@ public class InventoryControllerTest {
 		int stock = rnd.nextInt();
 
 		final ObjectMapper mapper = new ObjectMapper();
-
-
 		inv.setId(id);
 		inv.setName("myInv");
 		inv.setDescription("Test inventory description");
@@ -38,7 +36,6 @@ public class InventoryControllerTest {
 		// construct a json string with the above properties
 
 		final StringBuilder myJsonStr = new StringBuilder();
-
 		myJsonStr.append("{");
 		myJsonStr.append("\"id\":").append(id).append(",");
 		myJsonStr.append("\"name\":").append("\"myInv\"").append(",");
@@ -56,16 +53,12 @@ public class InventoryControllerTest {
 		final JsonNode jsonObj = mapper.readTree(json);
 		final JsonNode myJsonObj = mapper.readTree(myJson);
 
-
 		assert(jsonObj.equals(myJsonObj));
-
-
 	}
 
 	@Test
 	public void testMarshalFromJson() throws Exception {
 		final Random rnd = new Random();
-
 		long id = rnd.nextLong();
 		int price = rnd.nextInt();
 		int stock = rnd.nextInt();
@@ -75,7 +68,6 @@ public class InventoryControllerTest {
 		// construct a json string with the above properties
 
 		final StringBuilder myJsonStr = new StringBuilder();
-
 		myJsonStr.append("{");
 		myJsonStr.append("\"id\":").append(id).append(",");
 		myJsonStr.append("\"name\":").append("\"myInv\"").append(",");
@@ -90,7 +82,6 @@ public class InventoryControllerTest {
 		System.out.println("My JSON String:" + myJson);
 
 		// marshall json to Inventory object
-
 		final Inventory inv = mapper.readValue(myJson, Inventory.class);
 
 		// make sure all the properties match up

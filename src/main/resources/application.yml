@@ -1,10 +1,15 @@
 # Server configuration
 server:
-  context-path: /micro
   port: ${SERVICE_PORT:8080}
+  servlet:
+    context-path: /micro
 
 management:
-  port: ${MANAGEMENT_PORT:8090}
+  server:
+    port: ${MANAGEMENT_PORT:8090}
+  endpoints:
+    web:
+      base-path: /
 
 # Spring properties
 spring:
