@@ -1,5 +1,5 @@
 # STAGE: Build
-FROM gradle:4.9.0-jdk8-alpine as builder
+FROM gradle:5.4.1-jdk8-alpine as builder
 
 # Create Working Directory
 ENV BUILD_DIR=/home/gradle/app/
@@ -7,8 +7,8 @@ RUN mkdir $BUILD_DIR
 WORKDIR $BUILD_DIR
 
 # Download Dependencies
-COPY build.gradle $BUILD_DIR
-RUN gradle build -x :bootRepackage -x test --continue
+COPY build.gradle settings.gradle $BUILD_DIR
+RUN gradle build -x test --continue
 
 # Copy Code Over and Build jar
 COPY src src
