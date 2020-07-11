@@ -22,10 +22,9 @@ FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.7
 # && apk add jq bash bc ca-certificates curl \
 # && update-ca-certificates
 
-# Create app directory, chgrp, and chmod
+# Create app directory
 ENV APP_HOME=/home/jboss/app
-RUN mkdir -p $APP_HOME/scripts
-RUN chgrp -R 0 $APP_HOME && chmod -R g=u $APP_HOME
+RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
 # Copy jar file over from builder stage
@@ -33,9 +32,6 @@ COPY --from=builder /home/gradle/app/build/libs/micro-inventory-0.0.1.jar $APP_H
 RUN mv ./micro-inventory-0.0.1.jar app.jar
 
 COPY startup.sh startup.sh
-COPY scripts/max_heap.sh scripts/
-
-USER 2000
 
 EXPOSE 8080 8090
 ENTRYPOINT ["./startup.sh"]
